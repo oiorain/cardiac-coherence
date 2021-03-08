@@ -9,13 +9,22 @@ body {
     height: 100vh;
     background-color: #ededed;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+
+}
+body:hover #breathe{
+  visibility: visible;
+}
+
+#breathe {
+  color: #aaa;
+  visibility: hidden;
 }
 
 #bubble-container {
-    /* height: 80vh; */
+    height: 80vh;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
 }
 
 #bubble {
@@ -24,16 +33,16 @@ body {
     height: 10vh;
     border-radius: 100px;
 
-    animation: mover 8s infinite ease-in-out;
+    animation: bubble 8s infinite ease-in-out;
 }
 
-/* @keyframes mover {
-    0% { transform: translateY(10vh); }
-    50% { transform: translateY(70vh); }
-    100% { transform: translateY(10vh); }
-} */
+@keyframes updown {
+    0% { transform: translateY(+20vh); }
+    50% { transform: translateY(-20vh); }
+    100% { transform: translateY(+20vh); }
+}
 
-@keyframes mover {
+@keyframes bubble {
     0% {  height: 10vh;  width: 10vh; border-radius: 10vh}
     50% { height: 50vh; width: 50vh; border-radius: 50vh}
     100% {  height: 10vh; width: 10vh; border-radius: 10vh}
