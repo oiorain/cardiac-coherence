@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Breathe in breathe out</title>
+  <title>Breathe in・breathe out</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="screen" href="main.css">
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -12,7 +12,6 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-4P8GF5D85B');
   </script>
 </head>
@@ -20,8 +19,19 @@
   <section id="bubble-container">
     <div id="bubble"></div>
   </section>
-  <p id="breathe">Bubble</p>
-  <p id="color">New random color</p>
+  <section id="commands">
+    <div>
+      <button id="breathe">Bubble</button>
+    </div>
+    <div>
+      <button id="color">New random color</button>
+    </div>
+    <div>
+      <button id="slower">Slower</button>
+      <span id="time"></span>
+      <button id="faster">Faster</button>
+    </div>
+  </section>
   <script src="main.js"></script>
 </body>
 </html>
