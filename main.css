@@ -49,7 +49,7 @@ button{
   width: 10vh;
   height: 10vh;
   border-radius: 100px;
-  animation: bubble 8s infinite ease-in-out;
+  animation: updown 8s infinite ease-in-out;
 }
 
 @keyframes updown {
@@ -62,4 +62,13 @@ button{
   0% {  height: 10vh;  width: 10vh; border-radius: 10vh}
   50% { height: 50vh; width: 50vh; border-radius: 50vh}
   100% {  height: 10vh; width: 10vh; border-radius: 10vh}
+}
+
+@keyframes boxbreathing {
+  0% {  height: 10vh; width: 10vh; border-radius: 10vh; background-color: #96ae9c; }
+  25% {  height: 50vh; width: 50vh; border-radius: 50vh; background-color: #96ae9c; }
+  50% { height: 50vh; width: 50vh; border-radius: 50vh; background-color: gray; }
+  52% { height: 50vh; width: 50vh; border-radius: 50vh; background-color: #96ae9c; }
+  75% {  height: 10vh; width: 10vh; border-radius: 10vh; background-color: #96ae9c; }
+  100% {  height: 10vh; width: 10vh; border-radius: 10vh; background-color: gray; }
 }

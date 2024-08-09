@@ -22,9 +22,14 @@ document.getElementById('breathe').addEventListener('click', () => {
   if (document.getElementById('breathe').innerText == "Bubble") {
       document.getElementById('breathe').innerText = "Up-down"
       document.getElementById('bubble').style.animationName = 'updown'
+  } else if (document.getElementById('breathe').innerText == "Up-down") {
+      document.getElementById('breathe').innerText = "Sama Vritti / Box Breathing"
+      document.getElementById('bubble').style.animationName = 'boxbreathing'
+      changePace(+pace)
   } else {
     document.getElementById('breathe').innerText = "Bubble"
     document.getElementById('bubble').style.animationName = 'bubble'
+    changePace(-pace/2)
   }
 });
 
