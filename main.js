@@ -5,35 +5,49 @@ function getRandomColor() {
   return color;
 }
 
+let pace = 16;
+displayPace()
+
 function displayPace(){
+  document.getElementById('bubble').style.animationDuration = pace+"s";
   document.getElementById('time').innerText = pace+"secs"
 }
 function changePace(change){
   pace += change;
-
-  document.getElementById('bubble').style.animationDuration = pace+"s";
+  displayPace();
+}
+function setPace(change){
+  pace = change;
   displayPace();
 }
 
-let pace = 8;
-displayPace()
+function setActive(t){
+  let x = document.getElementsByClassName("active");
+
+  // If it exists, remove it.
+  if(x.length > 0) { x[0].classList.remove("active"); }
+  t.classList.add("active")
+}
+
+document.getElementById('boxbreathing').addEventListener('click', () => {
+  document.getElementById('bubble').style.animationName = 'boxbreathing'
+  setPace(16)
+  setActive(document.getElementById('boxbreathing'))
+})
 
 document.getElementById('breathe').addEventListener('click', () => {
-  if (document.getElementById('breathe').innerText == "Bubble") {
-      document.getElementById('breathe').innerText = "Up-down"
-      document.getElementById('bubble').style.animationName = 'updown'
-  } else if (document.getElementById('breathe').innerText == "Up-down") {
-      document.getElementById('breathe').innerText = "Sama Vritti / Box Breathing"
-      document.getElementById('bubble').style.animationName = 'boxbreathing'
-      changePace(+pace)
-  } else {
-    document.getElementById('breathe').innerText = "Bubble"
-    document.getElementById('bubble').style.animationName = 'bubble'
-    changePace(-pace/2)
-  }
+  document.getElementById('bubble').style.animationName = 'bubble'
+  setPace(8)
+  setActive(document.getElementById('breathe'))
 });
 
-document.getElementById('color').addEventListener('click', () => {
+document.getElementById('updown').addEventListener('click', () => {
+  document.getElementById('bubble').style.animationName = 'updown'
+  setPace(8)
+  setActive(document.getElementById('updown'))
+})
+
+document.getElementById('bubble').addEventListener('click', () => {
   document.getElementById('bubble').style.backgroundColor = getRandomColor()
 });
 
